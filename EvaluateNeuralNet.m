@@ -1,3 +1,5 @@
+%Neural Network is used after it has been created using nntool.
+
 XNN = transpose(Binary_All(:,1:100));
 YNN = transpose(Binary_All(:,101));
 [X,Y,T,AUC,OPTROCPT] = perfcurve(YNN,NeuralNet_outputs,1);
