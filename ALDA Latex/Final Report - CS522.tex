@@ -91,7 +91,7 @@
 	According to the problem statement of the competition, we aimed to find a model which has a greater accuracy while minimizing the false positives in the output.
 	
 	\subsection{Hypothesis}
-	We worked on implementing models of the classifications techniques we have been familiarized with to find a model with lesser number of false positives and higher accuracy. Thus, we focused on the values of True Positive Rate, False Positive Rate, Precision and Accuracy of the models. Most importantly, we used the ROC (Receiver Operating Curve) to determine the effectiveness of the model by comparing the area under the curve for the models. This will be more helpful compared to other criteria as:
+	We worked on implementing models of the classifications techniques we have been familiarized with to find a model with lesser number of false positives and higher accuracy. Thus, we focused on the values of True Positive Rate, False Negative Rate, Precision and Accuracy of the models. Most importantly, we used the ROC (Receiver Operating Curve) to determine the effectiveness of the model by comparing the area under the curve for the models. This will be more helpful compared to other criteria as:
 	\begin{itemize}
 		\item It is insensitive to unbalanced dataset where there is a disparity in the number of test cases outputs.  
 		\item We consider all the cut-offs in a model to find its effectiveness.
@@ -144,16 +144,16 @@
 		\label{fig:sponsor}
 	\end{figure}
 	
-	We take an example of Sponsor code here, for which we plot the data and see a discerning pattern. We can see that for specific sponsor codes, the chances of getting a grant is more.
+	We take an example of one of the attributes, Sponsor code, for which we plot the data and see a discerning pattern. We can see that for specific sponsor codes, the chances of getting a grant is more.
 	
-	But we could not find any conclusive pattern in any of the plots and thus, moved on with the classification. Since decision trees doesn't have much problem with the number of dimensions we moved ahead with building decision tree and random forest classifiers. For the decision tree classifier we opted for a 5-fold cross validation. The confusion matrix along with TPR/FPR rate for the random forest is listed at Fig.\ref{fig:RFCM}. The accuracy obtained for the decision tree is 82.6\% while for the random forest is 85.9\%.
+	But we could not find any conclusive pattern in most of the plots and thus, moved on with the classification. Since our data did not have too many attributes, dimensionality reduction was not required. For the decision tree and SVM classifiers we opted for a 5-fold cross validation. The confusion matrix along with TPR/FNR rate for the random forest is listed at Fig.\ref{fig:RFCM}. The accuracy obtained for the decision tree is 82.6\% while for the random forest is 85.9\%.
 	
 	\begin{figure}[h]
 		\begin{center}
 			%\framebox[4.0in]{$\;$}
 			\fbox{\includegraphics[scale=0.5]{RandomForestCM.png}}
 		\end{center}
-		\caption{Confusion Matrix and TPR/FPR of Random Forest.}
+		\caption{Confusion Matrix and TPR/FNR of Random Forest.}
 		\label{fig:RFCM}
 	\end{figure}
 	
