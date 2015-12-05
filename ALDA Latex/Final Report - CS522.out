@@ -10,5 +10,12 @@
 \BOOKMARK [1][-]{section.3}{Plan}{}% 10
 \BOOKMARK [2][-]{subsection.3.1}{Hypothesis}{section.3}% 11
 \BOOKMARK [2][-]{subsection.3.2}{Experimental Design}{section.3}% 12
-\BOOKMARK [1][-]{section.4}{Experiments}{}% 13
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 14
+\BOOKMARK [1][-]{section.4}{Experiments and Analysis}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Pre-Processing}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Establishing the Baseline}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Comparison of Classification Methologies}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.4}{Comparison of Encoding Methodologies}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.5}{Feature Importance Analysis}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.6}{Experiment Results}{section.4}% 19
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 20
+\BOOKMARK [1][-]{section.6}{Future Work}{}% 21

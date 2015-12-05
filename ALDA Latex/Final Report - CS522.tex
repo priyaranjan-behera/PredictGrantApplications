@@ -4,6 +4,7 @@
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{multirow}
+\usepackage{float}
 %\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
 
 
@@ -131,8 +132,9 @@
 	\end{enumerate}
 	
 	
-	\section{Experiments}
+	\section{Experiments and Analysis}
 	
+	\subsection{Pre-Processing}
 	After the pre-processing steps which included indexing and generation of new features, we resorted to visualization of the data to find any correlation of attributes with the results (As shown in Fig.\ref{fig:sponsor}).
 	
 	\begin{figure}[h]
@@ -145,10 +147,13 @@
 		\label{fig:sponsor}
 	\end{figure}
 	
-	We take an example of one of the attributes, Sponsor code, for which we plot the data and see a discerning pattern. We can see that for specific sponsor codes, the chances of getting a grant is more.But we could not find any conclusive pattern in most of the plots and thus, moved on with the classification. 
+	We take an example of one of the attributes, Sponsor code, for which we plot the data and see a discerning pattern. We can see that for specific sponsor codes, the chances of getting a grant is more.But we could not find any conclusive pattern in most of the plots and thus, moved on with the classification.  
 	
-	Since our data did not have too many attributes, dimensionality reduction was not required. For the decision tree and SVM classifiers we opted for a 5-fold cross validation. 
+	\subsection{Establishing the Baseline}
+	We implemented a simple one node decision tree to obtain one of the attributes, the mean of number of unsuccessful grants, at the root node. Thus, the classification done with the help of a decision stub with this variable will act as baseline for this problem. Based on the tree obtained, any data object with the variable value greater than 0.813333 was classified as 0 and others as 1. We obtained an accuracy of 72.1\% from this and we aimed to design models with greater accuracy.
 	
+	\subsection{Comparison of Classification Methologies}
+		Since our data did not have too many attributes, dimensionality reduction was not required. For the decision tree and SVM classifiers we opted for a 5-fold cross validation.
 	After the classification models were implemented, we analyzed the confusion matrix to deduce the evaluation parameters and compare the models. One of the confusion matrices along with TPR/FNR rate which was obtained from the random forest model for categorical data is listed at Fig.\ref{fig:RFCM}. 
 	
 	\begin{figure}[h]
@@ -160,13 +165,11 @@
 		\label{fig:RFCM}
 	\end{figure}
 	
-	
 
-	
 	We also compared the models according to the area under the curve of the ROC curve. This will help us to determine the effectiveness of the model in spite of any imbalance in the number of data objects with a specific output
-	By comparing the models for categorical data with respect to the ROC curve(Fig.\ref{fig:ROCCat}), we find that the area under the curve for random forest is a little high and thus, random forest is a better model in this scenario where we take the data without any encoding.
+	By comparing the models which used decision tree and random forest for categorical data based on the ROC curve(Fig.\ref{fig:ROCCat}), we find that the area under the curve for random forest is a higher and thus, random forest is a better model in this scenario where we take the data without any encoding.
 	
-	\begin{figure}[h]
+	\begin{figure}[]
 		\begin{center}
 			%\framebox[4.0in]{$\;$}
 			\fbox{\includegraphics[scale=0.38]{ROC-DT.png}}
@@ -177,9 +180,11 @@
 		\label{fig:ROCCat}
 	\end{figure}
 	
-	Similarly, we can compare the encoding methodologies by using the same classification methodology for each of the encodings and evaluate the parameters. Fig. \ref{fig:ROC} provides the comparision between the encodings where we have taken quadratic SVM as the classifier. We see that binary encoding works a little better in this scenario.
+	\subsection{Comparison of Encoding Methodologies}
 	
-	\begin{figure}[h]
+	Similarly, we compared the encoding methodologies by using the same classification methodology for each of the encodings and evaluate the parameters. Fig. \ref{fig:ROCProbBin} provides the comparison between the encodings where we have taken quadratic SVM as the classifier. We see that binary encoding works a little better in this scenario.
+	
+	\begin{figure}[H]
 		\begin{center}
 			%\framebox[4.0in]{$\;$}
 			\fbox{\includegraphics[scale=0.4]{ROC-QuadSVM-Bin.png}}
@@ -190,39 +195,40 @@
 		\label{fig:ROCProbBin}
 	\end{figure}
 	
-	In addition, we found the important features which determine the outcome of the application. The data is plotted in Fig.\ref{fig:FIM}. From the plot we can see that features Contract Value(3), Sponsor Code(1), Application Month(14), Grant Category(2) are the most important factors.
+	\subsection{Feature Importance Analysis}
+	In addition, we found the important features which determine the outcome of the application. The feature importance is calculated by comparing the error obtained when a single attribute is changed by a specific value in the data object. The data obtained from this dataset is plotted in Fig.\ref{fig:FIM}. From the plot we can see that features Contract Value, Sponsor Code, Application Month, Application Year, Grant Category are the most important factors.
 	
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\begin{center}
 			%\framebox[4.0in]{$\;$}
 			\fbox{\includegraphics[scale=0.5]{FIM.png}}
 		\end{center}
 		\caption{Feature Importance Matrix Generated By Random Forest.}
 		\label{fig:FIM}
-	\end{figure}
+	\end{figure} 
 	
-		Table. \ref{table:Table1} provides us the evaluation parameters of all the models we have implemented. Plots \ref{fig:Plot1} and \ref{fig:Plot2} summarizes the data. 
-		
-		\begin{figure}[h]
-			\begin{center}
-				%\framebox[4.0in]{$\;$}
-				\fbox{\includegraphics[scale=0.45]{Accuracy.png}}
-			\end{center}
-			\caption{Accuracy of the classification models implemented.}
-			\label{fig:Plot1}
-		\end{figure}
-		
-		\begin{figure}[h]
-			\begin{center}
-				%\framebox[4.0in]{$\;$}
-				\fbox{\includegraphics[scale=0.45]{AreaUnderCurve.png}}
-			\end{center}
-			\caption{Area Under Curve of the ROC curves for all the implemented classification models.}
-			\label{fig:Plot2}
-		\end{figure} 
-		
+	\subsection{Experiment Results}
+	
+			\begin{figure}[h]
+				\begin{center}
+					%\framebox[4.0in]{$\;$}
+					\fbox{\includegraphics[scale=0.45]{Accuracy.png}}
+				\end{center}
+				\caption{Accuracy of the classification models implemented.}
+				\label{fig:Plot1}
+			\end{figure}
+			
+			\begin{figure}[h]
+				\begin{center}
+					%\framebox[4.0in]{$\;$}
+					\fbox{\includegraphics[scale=0.45]{AreaUnderCurve.png}}
+				\end{center}
+				\caption{Area Under Curve of the ROC curves for all the implemented classification models.}
+				\label{fig:Plot2}
+			\end{figure} 
+	
 		\renewcommand{\arraystretch}{1.5}
-		\begin{table}[]
+		\begin{table}[H]
 			\centering
 			\resizebox{\textwidth}{!}{%
 				\begin{tabular}{|l|l|l|l|l|l|}
@@ -254,10 +260,24 @@
 			\caption{Evaluation parameters obtained for all the tested classification models}
 			\label{table:Table1}
 		\end{table}
-	
+		
+			The evaluation parameters for all the classification models that have been implemented are listed at Table. \ref{table:Table1}. We can also visually compare the effectiveness of the models based on the plots of accuracy and area under curve for each of the models in  Fig. \ref{fig:Plot1} and \ref{fig:Plot2}. The area under the curve in these cases mostly correlates with the accuracy. We can see that accuracies for SVMs are low when there is no encoding as all the data objects are classified as a single output (In this case 0). This is the reason TNR here is high while TPR is too low. 	
 	
 	\section{Conclusion}
-	The experiments using the categorical values without encoding is done for decision tree, boosted trees and random forest, where we found boosted tree to be a little more accurate. Further, we will work on encoding the categorical attributes and create models based on neural networks, SVM and naive bayes classifiers.
+	The experiments were done using a few of the classification techniques that were covered in the CSC522 courses. We trained the models using binary and probabilistic encodings of the categorical data as well as without using any encoding. Evaluation parameters like accuracy, area under of curve in ROC plot, TPR, TNR were used to compare the models.
+	
+	From the results obtained we found that:
+	
+	\begin{itemize}
+		\item Tree based classification methods work better with categorical data, while bagging and boosting of the trees gives us a more efficient model.
+		\item SVMs fare poorly when they are trained with categorical data without any encodings. We saw improvements in the models with accuracy, but they couldn't match the effectiveness of the tree-based classifiers.
+		\item Neural network provides us a fairly good results without any encodings. But it provides a significant rise in the effectiveness when encodings were introduced.
+		\item TPR/TNR determine the effectiveness of a model when there is a huge imbalance in the outputs of the classifier. In cases of SVMs when the classifier predicted all values as 0, we got a very high TNR value while TPR was low, signifying a poor model
+		\item Based on our analysis, for this particular problem, AdaBoost along with probabilistic encoding gave use the model with the highest effectiveness which has an accuracy of 87.3\% compared the baseline of 72.1\%.
+	\end{itemize}
+	
+	\section{Future Work}
+	The dataset contains de-identified person data of the investigators in each of the applications. In case of grant applications, there might be individuals or combination of individuals who can be more likely to receive a grant. Thus,  we can create a Bayes Network based probabilistic classification model which can leverage the individuals' attributes to create a more effective model.  
 	
 	\begin{thebibliography}{10} % 100 is a random guess of the total number of
 		%references

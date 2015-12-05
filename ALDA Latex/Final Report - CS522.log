@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.10)  4 DEC 2015 17:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.10)  4 DEC 2015 20:08
 entering extended mode
 **"Final Report - CS522.tex"
 ("Final Report - CS522.tex"
@@ -211,171 +211,221 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen112
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count103
+\float@exts=\toks15
+\float@box=\box28
+\@float@everytoks=\toks16
+\@floatcapt=\box29
+)
 ("Final Report - CS522.aux"
 
 LaTeX Warning: Label `Matlab' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 39.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-\AtBeginShipoutBox=\box28
+\AtBeginShipoutBox=\box30
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
+\scratchcounter=\count104
 \scratchdimen=\dimen113
-\scratchbox=\box29
-\nofMPsegments=\count104
-\nofMParguments=\count105
-\everyMPshowfont=\toks15
-\MPscratchCnt=\count106
+\scratchbox=\box31
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count107
 \MPscratchDim=\dimen114
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
-\everyMPtoPDFconversion=\toks16
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
+\everyMPtoPDFconversion=\toks18
 )
-Package hyperref Info: Link coloring OFF on input line 38.
+Package hyperref Info: Link coloring OFF on input line 39.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count109
+\c@section@level=\count110
 )
-LaTeX Info: Redefining \ref on input line 38.
-LaTeX Info: Redefining \pageref on input line 38.
-LaTeX Info: Redefining \nameref on input line 38.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
 
 ("Final Report - CS522.out") ("Final Report - CS522.out")
 \@outlinefile=\write3
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 42.
+(Font)              <7> on input line 43.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 42.
+(Font)              <5> on input line 43.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 42.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 43.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 52.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 53.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-<SponsorPlot.png, id=84, 238.64156pt x 217.5628pt>
+<SponsorPlot.png, id=108, 271.76532pt x 232.61906pt>
 File: SponsorPlot.png Graphic file (type png)
  <use SponsorPlot.png>
-Package pdftex.def Info: SponsorPlot.png used on input line 141.
-(pdftex.def)             Requested size: 119.32048pt x 108.78113pt.
+Package pdftex.def Info: SponsorPlot.png used on input line 143.
+(pdftex.def)             Requested size: 135.88232pt x 116.30923pt.
 
-<SponsorHist.png, id=86, 256.70906pt x 219.06844pt>
+<SponsorHist.png, id=110, 283.81032pt x 232.61906pt>
 File: SponsorHist.png Graphic file (type png)
  <use SponsorHist.png>
-Package pdftex.def Info: SponsorHist.png used on input line 142.
-(pdftex.def)             Requested size: 128.3542pt x 109.53394pt.
+Package pdftex.def Info: SponsorHist.png used on input line 144.
+(pdftex.def)             Requested size: 141.9048pt x 116.30923pt.
 
-[3] <RandomForestCM.png, id=101, 484.81125pt x 291.33844pt>
+[3] <RandomForestCM.png, id=125, 484.81125pt x 291.33844pt>
 File: RandomForestCM.png Graphic file (type png)
 
 <use RandomForestCM.png>
-Package pdftex.def Info: RandomForestCM.png used on input line 157.
+Package pdftex.def Info: RandomForestCM.png used on input line 162.
 (pdftex.def)             Requested size: 242.40503pt x 145.66885pt.
- <ROC-DT.png, id=103, 392.96812pt x 380.92313pt>
-File: ROC-DT.png Graphic file (type png)
-
-<use ROC-DT.png>
-Package pdftex.def Info: ROC-DT.png used on input line 172.
-(pdftex.def)             Requested size: 149.32942pt x 144.75227pt.
- <ROC-RF.png, id=104, 402.75468pt x 378.66469pt>
-File: ROC-RF.png Graphic file (type png)
-
-<use ROC-RF.png>
-Package pdftex.def Info: ROC-RF.png used on input line 173.
-(pdftex.def)             Requested size: 153.04836pt x 143.89407pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `fig:ROC' on page 4 undefined on input line 180.
-
-<ROC-QuadSVM-Bin.png, id=105, 364.36125pt x 378.66469pt>
-File: ROC-QuadSVM-Bin.png Graphic file (type png)
-
-<use ROC-QuadSVM-Bin.png>
-Package pdftex.def Info: ROC-QuadSVM-Bin.png used on input line 185.
-(pdftex.def)             Requested size: 145.74191pt x 151.46318pt.
-
-<ROC-QuadSVM-Prob.png, id=106, 377.15906pt x 377.91188pt>
-File: ROC-QuadSVM-Prob.png Graphic file (type png)
-
-<use ROC-QuadSVM-Prob.png>
-Package pdftex.def Info: ROC-QuadSVM-Prob.png used on input line 186.
-(pdftex.def)             Requested size: 150.86095pt x 151.16206pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<FIM.png, id=108, 374.90062pt x 312.41719pt>
-File: FIM.png Graphic file (type png)
- <use FIM.png>
-Package pdftex.def Info: FIM.png used on input line 198.
-(pdftex.def)             Requested size: 187.44984pt x 156.2082pt.
-
-Underfull \vbox (badness 1552) has occurred while \output is active []
-
- [4 <./SponsorPlot.png> <./SponsorHist.png> <./RandomForestCM.png>]
-<Accuracy.png, id=122, 854.44218pt x 300.3722pt>
-File: Accuracy.png Graphic file (type png)
- <use Accuracy.png>
-Package pdftex.def Info: Accuracy.png used on input line 209.
-(pdftex.def)             Requested size: 384.49542pt x 135.16623pt.
-
-Underfull \vbox (badness 7344) has occurred while \output is active []
-
- [5 <./ROC-DT.png> <./ROC-RF.png> <./ROC-QuadSVM-Bin.png (PNG copy)> <./ROC-Qua
-dSVM-Prob.png> <./FIM.png>] <AreaUnderCurve.png, id=134, 855.195pt x 303.38344p
-t>
-File: AreaUnderCurve.png Graphic file (type png)
-
-<use AreaUnderCurve.png>
-Package pdftex.def Info: AreaUnderCurve.png used on input line 218.
-(pdftex.def)             Requested size: 384.8342pt x 136.52127pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 225.
+               Default added (so using `tbp') on input line 172.
 
+<ROC-DT.png, id=127, 392.96812pt x 380.92313pt>
+File: ROC-DT.png Graphic file (type png)
+ <use ROC-DT.png>
+Package pdftex.def Info: ROC-DT.png used on input line 175.
+(pdftex.def)             Requested size: 149.32942pt x 144.75227pt.
 
-Underfull \hbox (badness 1331) in paragraph at lines 264--265
+<ROC-RF.png, id=128, 402.75468pt x 378.66469pt>
+File: ROC-RF.png Graphic file (type png)
+ <use ROC-RF.png>
+Package pdftex.def Info: ROC-RF.png used on input line 176.
+(pdftex.def)             Requested size: 153.04836pt x 143.89407pt.
+
+<ROC-QuadSVM-Bin.png, id=130, 364.36125pt x 378.66469pt>
+File: ROC-QuadSVM-Bin.png Graphic file (type png)
+
+<use ROC-QuadSVM-Bin.png>
+Package pdftex.def Info: ROC-QuadSVM-Bin.png used on input line 190.
+(pdftex.def)             Requested size: 145.74191pt x 151.46318pt.
+
+<ROC-QuadSVM-Prob.png, id=131, 377.15906pt x 377.91188pt>
+File: ROC-QuadSVM-Prob.png Graphic file (type png)
+
+<use ROC-QuadSVM-Prob.png>
+Package pdftex.def Info: ROC-QuadSVM-Prob.png used on input line 191.
+(pdftex.def)             Requested size: 150.86095pt x 151.16206pt.
+
+Underfull \vbox (badness 1540) has occurred while \output is active []
+
+ [4pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.197 
+       <./SponsorPlot.png> <./SponsorHist.png>]
+<FIM.png, id=143, 421.575pt x 291.33844pt>
+File: FIM.png Graphic file (type png)
+ <use FIM.png>
+Package pdftex.def Info: FIM.png used on input line 204.
+(pdftex.def)             Requested size: 210.78697pt x 145.66885pt.
+ [5pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.208 	\end{figure}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{figure.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.208 	\end{figure}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{figure.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.208 	\end{figure}
+                    <./RandomForestCM.png> <./ROC-DT.png> <./ROC-RF.png> <./ROC
+-QuadSVM-Bin.png (PNG copy)> <./ROC-QuadSVM-Prob.png>]
+<Accuracy.png, id=153, 854.44218pt x 300.3722pt>
+File: Accuracy.png Graphic file (type png)
+ <use Accuracy.png>
+Package pdftex.def Info: Accuracy.png used on input line 215.
+(pdftex.def)             Requested size: 384.49542pt x 135.16623pt.
+
+<AreaUnderCurve.png, id=154, 855.195pt x 303.38344pt>
+File: AreaUnderCurve.png Graphic file (type png)
+ <use AreaUnderCurve.png>
+Package pdftex.def Info: AreaUnderCurve.png used on input line 224.
+(pdftex.def)             Requested size: 384.8342pt x 136.52127pt.
+
+Underfull \vbox (badness 4084) has occurred while \output is active []
+
+ [6pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.263 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.263 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.263 
+       <./FIM.png> <./Accuracy.png> <./AreaUnderCurve.png>] [7pdfTeX warning (e
+xt4): destination with the same identifier (name{table.1}) has been already use
+d, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.276 		\item B
+               ased on our analysis, for this particular problem, AdaBoost a...
+]
+Underfull \hbox (badness 1331) in paragraph at lines 284--285
 []\OT1/ptm/m/n/10 Top 10 al-go-rithms in data min-ing. Knowl. Inf. Syst. 14, 1 
 (De-cem-ber 2007), 1-37.
  []
@@ -386,48 +436,49 @@ Missing character: There is no ú in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 273.
-[6pdfTeX warning (ext4): destination with the same identifier (name{cite.Matlab
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
+[8pdfTeX warning (ext4): destination with the same identifier (name{cite.Matlab
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.273 \end{document}
-                     <./Accuracy.png> <./AreaUnderCurve.png>] [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 273.
-
-("Final Report - CS522.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 273.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 273.
-Package rerunfilecheck Info: File `"Final Report - CS522".out' has not changed.
-
-(rerunfilecheck)             Checksum: B729EEE50A7D9CBBCCAE38F5F56815F4;837.
+l.293 \end{document}
+                    ]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 293.
+ ("Final Report - CS522.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 293.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 293.
 
 
-LaTeX Warning: There were undefined references.
+Package rerunfilecheck Warning: File `"Final Report - CS522".out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
+Package rerunfilecheck Info: Checksums for `"Final Report - CS522".out':
+(rerunfilecheck)             Before: E94A68DF4E892BC761DB2FFD1DF1EB7A;1316
+(rerunfilecheck)             After:  3B576823FA59D64A3B10A3851AD0EDCE;1364.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 273.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 293.
  ) 
 Here is how much of TeX's memory you used:
- 5727 strings out of 493698
- 83329 string characters out of 3144393
- 187937 words of memory out of 3000000
- 8960 multiletter control sequences out of 15000+200000
+ 5799 strings out of 493698
+ 84278 string characters out of 3144393
+ 189277 words of memory out of 3000000
+ 9020 multiletter control sequences out of 15000+200000
  13867 words of font info for 29 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 37i,15n,39p,677b,347s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,15n,39p,677b,372s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
 mes/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Final Report - CS522.pdf" (7 pages, 385296 bytes).
+Output written on "Final Report - CS522.pdf" (8 pages, 407347 bytes).
 PDF statistics:
- 183 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 213 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 211 words of extra memory for PDF output out of 10000 (max. 10000000)
 
