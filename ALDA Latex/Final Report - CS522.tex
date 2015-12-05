@@ -42,7 +42,7 @@
 	\maketitle
 	
 	\begin{abstract}
-		This project focuses on finding an accurate method to predict the fate of a university grant applications. The problem was hosted as a Kaggle competition by University of Melbourne to improve their efficiency on grant applications. The dataset contains a mixture of continuous and categorical data and thus, to handle the categorical data attributes we employed methodologies like binary and probabilistic encoding.  We created models based on classifiers such as  Decision Trees, Random Forest, AdaBoost Trees, SVMs and Neural Networks and compared their effectiveness.We used several evaluation parameters like accuracy, area under the curve in ROC plots, TPR and TNR to compare the models and find the most effective model. Furthermore, we also worked on finding the most deterministic attributes in a grant application.
+		This project focuses on finding an accurate method to predict the fate of a university grant application. The problem was hosted as a Kaggle competition by University of Melbourne to improve their efficiency on grant applications. The dataset contains a mixture of continuous and categorical data and thus, to handle the categorical data attributes we employed methodologies like binary and probabilistic encoding.  We created models based on classifiers such as  Decision Trees, Random Forest, AdaBoost Trees, SVMs \& Neural Networks and compared their effectiveness.We used several evaluation parameters like accuracy, area under the curve in ROC plots, TPR and TNR to compare the models and determine the most effective model. Furthermore, we also worked on finding the most important attributes which affects the success of a grant application.
 	\end{abstract}
 	
 	\section{Background}
@@ -54,31 +54,31 @@
 	The university has provided a dataset containing 249 features, including variables that represent:
 	
 	\begin{itemize}
-		\item Type and size of the grant: It includes the basic information of the Grant Application like Application Month, Year, Contract Value, Sponsors, etc.
-		\item General area of study in the grant application: It includes the information on the study that is intended to be done with the grant like  research fields, courses and disciplines class and socio economic objective class.
-		\item De-identified Information of the Investigators: It includes personal data of the investigators like number of publications in different levels of journals, past history in grant applications, experience, educational qualifications, etc.  
+		\item Type and size of the grant: It includes the basic information of the grant application like application month, year, contract value, sponsors, etc.
+		\item General area of study of the grant application: It includes the information on the study that is intended to be done with the grant such as research fields, courses and disciplines class and socio economic objective class.
+		\item De-identified information of the investigators: It includes personal data of the investigators like number of publications in different levels of journals, past history in grant applications, experience, educational qualifications, etc.  
 	\end{itemize}
 	
-	The dataset contains multi-variate data with a few of them being continuous variables and a few categorical. There is a variable number of investigators in an application and thus, we need to aggregate the person data to create an efficient model. We implemented several of the classification techniques covered in the CSC522 course to arrive upon an efficient model.
+	The dataset contains multi-variate data with a few of them being continuous variables and a few categorical. There is a variable number of investigators in an application and thus, we need to aggregate the person data to create standard data rows which can be compared during classification. We implemented several of the classification techniques covered in the CSC522 course to arrive upon an efficient model.
 	
 	
 	\subsection{Literature Survey}
 	
-	As the dataset contains a variable number of person attributes depending on the number of investigators in a grant application, it would lead to multiple missing data fields in applications where the investigator count is less. According to Gerhard Svolba \cite{OneRow}, we need to create a one-row-per-subject data mart for most of the analytical methods that we need to proceed with. Accordingly, we need to aggregate the person data using mean, median, standard deviation, the quartiles, or special quantiles, etc to create the input rows.
+	As the dataset contains a variable number of person attributes depending on the number of investigators in a grant application, it would lead to multiple missing data fields in applications where the investigator count is less. According to Gerhard Svolba \cite{OneRow}, we need to create a one-row-per-subject data mart for most of the analytical methods that we need to proceed with. Accordingly, we need to aggregate the person data using mean, median, standard deviation, maximum, minimum, total. etc to create the input rows.
 	
-	We looked at approaches taken to solve similar problems which contains both continuous and categorical data \cite{Matlab} and found that decision trees and Naive Bayes are popular choices. On the contrary, methods like neural networks, SVM, etc. cannot work with categorical data. We implement decision trees as well as bagged and boosted trees for more efficiency. 
+	We looked at approaches taken to solve similar problems which contains both continuous and categorical data \cite{Matlab} and found that decision trees and Naive Bayes are popular choices. On the contrary, methods like neural networks, SVM, etc. cannot work well with categorical data. We can implement decision trees as well as bagged and boosted trees for more efficiency. 
 	
 	Daniele et al. \cite{HighCard} focused on the transformation of categorical data to continuous/binary data so that we can use the analytical methods which cannot process categorical data. While traditionally binary encoding is used for conversion of categorical data to binary, for categories with high cardinality a probabilistic approach is suggested.
 	
 	\section{Methods}
 	
-	The analysis of the data required extensive preprocessing steps because of its multi-variate nature and variable number of attributes. We implemented different type of classification techniques to compare the models and find the determining attributes for the classification.
+	The analysis of the data required extensive preprocessing steps because of its multi-variate nature and variable number of attributes. We implemented different types of classification techniques to compare the models and find the determining attributes for the classification.
 	
 	\subsection{Preprocessing}
 	
-	To handle the categorical values in the data, we indexed the attributes with numerical values after finding the unique values for each of the attributes. As per the approach suggested by Gerhard Svolba \cite{OneRow}, we aggregated the variable number of investigators specific data for each of the application which is not null and found the minimum, maximum for all the attributes. While for continuous attributes we also calculated mean, median, sum of the values to create new features. We then created plots of the attributes with respect to the output to visually inspect any correlation of the attributes with the results.
+	To handle the categorical values in the data, we indexed the attributes with numerical values after finding the unique values for each of the attributes. As per the approach suggested by Gerhard Svolba \cite{OneRow}, we aggregated the variable number of investigators specific data for each of the application which is not null and found the minimum, maximum for all the attributes while for continuous attributes we also calculated mean, median, sum of the values to create new features. We then created plots of the attributes with respect to the output to visually inspect any correlation of the attributes with the results.
 	
-	Since classification techniques like SVMs, Neural Networks, cannot handle categorical data, we implemented binary encoding to convert the categorical data into binary attributes which can be used in the analytical techniques. Further, to handle high cardinality, we implemented a probabilistic feature creation as specified at \cite{HighCard}. 
+	Since classification techniques like SVMs, Neural Networks, cannot handle categorical data well, we implemented binary encoding to convert the categorical data into binary attributes which can be used in the analytical techniques. Further, to handle high cardinality, we implemented a probabilistic feature creation as specified at \cite{HighCard}. 
 	
 	\subsection{Classification}
 	
@@ -97,9 +97,9 @@
 	According to the problem statement of the competition, we aimed to find a model which has a greater accuracy while minimizing the false positives in the output.
 	
 	\subsection{Hypothesis}
-	We worked on implementing models of the classifications techniques we have been familiarized with to find a model with lesser number of false positives and higher accuracy. Thus, we focused on the values of True Positive Rate, False Negative Rate, Precision and Accuracy of the models. Most importantly, we used the ROC (Receiver Operating Curve) to determine the effectiveness of the model by comparing the area under the curve for the models. This will be more helpful compared to other criteria as:
+	We worked on implementing models of the classifications techniques we have been familiarized with to find a model with lesser number of false positives and higher accuracy. Thus, we focused on the values of True Positive Rate, True Negative Rate, Precision and Accuracy of the models. Most importantly, we used the ROC (Receiver Operating Curve) to determine the effectiveness of the model by comparing the area under the curve for the models. This will be more helpful compared to other criteria as:
 	\begin{itemize}
-		\item It is insensitive to unbalanced dataset where there is a disparity in the number of test cases outputs.  
+		\item It is insensitive to an unbalanced dataset where there is a disparity in the number of outputs of the data objects.  
 		\item We consider all the cut-offs in a model to find its effectiveness.
 	\end{itemize}
 	
@@ -151,7 +151,7 @@
 		\label{fig:sponsor}
 	\end{figure}
 	
-	We take an example of one of the attributes, Sponsor code, for which we plot the data and see a discerning pattern. We can see that for specific sponsor codes, the chances of getting a grant is more.But we could not find any conclusive pattern in most of the plots and thus, moved on with the classification.  
+	We take an example of one of the attributes, sponsor code, for which we plot the data and see a discerning pattern. We can see that for specific sponsor codes, the chances of getting a grant is more. But we could not find any conclusive pattern in most of the plots and thus, moved on with the classification.  
 	
 	\subsection{Establishing the Baseline}
 	We implemented a simple one node decision tree to obtain one of the attributes, the mean of number of unsuccessful grants, at the root node. Thus, the classification done with the help of a decision stub with this variable will act as baseline for this problem. Based on the tree obtained, any data object with the variable value greater than 0.813333 was classified as 0 and others as 1. We obtained an accuracy of 72.1\% from this and we aimed to design models with greater accuracy.
@@ -170,8 +170,9 @@
 	\end{figure}
 	
 	
-	We also compared the models according to the area under the curve of the ROC curve. This will help us to determine the effectiveness of the model in spite of any imbalance in the number of data objects with a specific output
-	By comparing the models which used decision tree and random forest for categorical data based on the ROC curve(Fig.\ref{fig:ROCCat}), we find that the area under the curve for random forest is a higher and thus, random forest is a better model in this scenario where we take the data without any encoding.
+	We also compared the models according to the area under the curve of the ROC curve. This will help us to determine the effectiveness of the model in spite of any imbalance in the number of data objects with a specific output.
+	
+	By comparing the models which used decision tree and random forest for categorical data based on the ROC curve(Fig.\ref{fig:ROCCat}), we find that the area under the curve for random forest is higher and thus, random forest is a better model in this scenario where we take the data without any encoding.
 	
 	\begin{figure}[]
 		\begin{center}
@@ -186,7 +187,7 @@
 	
 	\subsection{Comparison of Encoding Methodologies}
 	
-	Similarly, we compared the encoding methodologies by using the same classification methodology for each of the encodings and evaluate the parameters. Fig. \ref{fig:ROCProbBin} provides the comparison between the encodings where we have taken quadratic SVM as the classifier. We see that binary encoding works a little better in this scenario.
+	Similarly, we compared the encoding methodologies by using the same classification methodology for each of the encodings and evaluating the parameters. Fig. \ref{fig:ROCProbBin} provides the comparison between the encodings where we have taken quadratic SVM as the classifier. We see that binary encoding works a little better in this scenario.
 	
 	\begin{figure}[h]
 		\begin{center}
@@ -195,7 +196,7 @@
 			\fbox{\includegraphics[scale=0.4]{ROC-QuadSVM-Prob.png}}
 		\end{center}
 		
-		\caption{ROC Plot for Decision Tree and Random Forest.}
+		\caption{ROC Plot for Quadratic SVM Classifier with Binary(L) and Probabilistic(R) Encoding.}
 		\label{fig:ROCProbBin}
 	\end{figure}
 	
@@ -213,7 +214,7 @@
 	
 	\subsection{Experiment Results}
 	
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\begin{center}
 			%\framebox[4.0in]{$\;$}
 			\fbox{\includegraphics[scale=0.45]{Accuracy.png}}
@@ -222,7 +223,7 @@
 		\label{fig:Plot1}
 	\end{figure}
 	
-	\begin{figure}[H]
+	\begin{figure}[h]
 		\begin{center}
 			%\framebox[4.0in]{$\;$}
 			\fbox{\includegraphics[scale=0.45]{AreaUnderCurve.png}}
@@ -232,38 +233,38 @@
 	\end{figure} 
 	
 	\renewcommand{\arraystretch}{1.5}
-	\begin{table}[H]
-		\centering
-		\resizebox{\textwidth}{!}{%
-			\begin{tabular}{|l|l|l|l|l|l|}
-				\hline
-				\begin{tabular}[c]{@{}l@{}}Classification \\ Method\end{tabular} & \begin{tabular}[c]{@{}l@{}}Encoding \\ Method\end{tabular} & Accuracy (In \%) & Area Under Curve & TPR (In \%) & TNR(In \%) \\ \hline
-				\multirow{3}{*}{Decision Tree}                                   & Categorical Data                                           & 82.8             & 0.895            & 86.26       & 79.68      \\ \cline{2-6} 
-				& Binary Encoded                                             & 82.3             & 0.893            & 84.63       & 80.14      \\ \cline{2-6} 
-				& Probability Encoded                                        & 84.0             & 0.897            & 82.54       & 85.29      \\ \hline
-				\multirow{3}{*}{Random Forest}                                   & Categorical Data                                           & 85.8             & 0.938            & 86.05       & 85.58      \\ \cline{2-6} 
-				& Binary Encoded                                             & 85.9             & 0.937            & 85.08       & 86.54      \\ \cline{2-6} 
-				& Probability Encoded                                        & 85.4             & 0,930            & 82.6        & 87.9       \\ \hline
-				\multirow{3}{*}{AdaBoost Tree}                                   & Categorical Data                                           & 87.1             & 0.947            & 87.35       & 86.82      \\ \cline{2-6} 
-				& Binary Encoded                                             & 86.6             & 0.943            & 85.16       & 87.83      \\ \cline{2-6} 
-				& Probability Encoded                                        & 87.3             & 0.947            & 86.52       & 87.85      \\ \hline
-				\multirow{3}{*}{Linear SVM}                                      & Categorical Data                                           & 56.0             & 0.819            & 9.6         & 96.7       \\ \cline{2-6} 
-				& Binary Encoded                                             & 78.4             & 0.867            & 73.67       & 82.62      \\ \cline{2-6} 
-				& Probability Encoded                                        & 75.9             & 0.821            & 71.45       & 79.89      \\ \hline
-				\multirow{3}{*}{Quadratic SVM}                                   & Categorical Data                                           & 56.1             & 0.839            & 9.5         & 97.1       \\ \cline{2-6} 
-				& Binary Encoded                                             & 84.5             & 0.922            & 80.97       & 87.67      \\ \cline{2-6} 
-				& Probability Encoded                                        & 80.5             & 0.880            & 75.94       & 84.52      \\ \hline
-				\multirow{3}{*}{Cubic SVM}                                       & Categorical Data                                           & 55.9             & 0.806            & 9.1         & 97.1       \\ \cline{2-6} 
-				& Binary Encoded                                             & 84.6             & 0.925            & 80.9        & 87.7       \\ \cline{2-6} 
-				& Probability Encoded                                        & 80.8             & 0.875            & 77          & 84.2       \\ \hline
-				\multirow{3}{*}{Neural Network}                                  & Categorical Data                                           & 80.3             & 0.886            & 78.0        & 81.3       \\ \cline{2-6} 
-				& Binary Encoded                                             & 85.1             & 0.915            & 82.5        & 87.5       \\ \cline{2-6} 
-				& Probability Encoded                                        & 87.1             & 0.928            & 85.14       & 88.84      \\ \hline
-			\end{tabular}
-		}
-		\caption{Evaluation parameters obtained for all the tested classification models}
-		\label{table:Table1}
-	\end{table}
+\begin{table}[H]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|l|l|l|l|l|l|}
+			\hline
+			\begin{tabular}[c]{@{}l@{}}Classification \\ Method\end{tabular} & \begin{tabular}[c]{@{}l@{}}Encoding \\ Method\end{tabular} & Accuracy (In \%) & Area Under Curve & TPR (In \%) & TNR(In \%) \\ \hline
+			\multirow{3}{*}{Decision Tree}                                   & Categorical Data                                           & 82.8             & 0.895            & 86.3        & 79.7       \\ \cline{2-6} 
+			& Binary Encoded                                             & 82.3             & 0.893            & 84.6        & 80.1       \\ \cline{2-6} 
+			& Probability Encoded                                        & 84.0             & 0.897            & 82.5        & 85.3       \\ \hline
+			\multirow{3}{*}{Random Forest}                                   & Categorical Data                                           & 85.8             & 0.938            & 86.1        & 85.6       \\ \cline{2-6} 
+			& Binary Encoded                                             & 85.9             & 0.937            & 85.1        & 86.5       \\ \cline{2-6} 
+			& Probability Encoded                                        & 85.4             & 0,930            & 82.6        & 87.9       \\ \hline
+			\multirow{3}{*}{AdaBoost Tree}                                   & Categorical Data                                           & 87.1             & 0.947            & 87.4        & 86.8       \\ \cline{2-6} 
+			& Binary Encoded                                             & 86.6             & 0.943            & 85.2        & 87.8       \\ \cline{2-6} 
+			& Probability Encoded                                        & 87.3             & 0.947            & 86.5        & 87.9       \\ \hline
+			\multirow{3}{*}{Linear SVM}                                      & Categorical Data                                           & 56.0             & 0.819            & 9.6         & 96.7       \\ \cline{2-6} 
+			& Binary Encoded                                             & 78.4             & 0.867            & 73.7        & 82.6       \\ \cline{2-6} 
+			& Probability Encoded                                        & 75.9             & 0.821            & 71.5        & 79.9       \\ \hline
+			\multirow{3}{*}{Quadratic SVM}                                   & Categorical Data                                           & 56.1             & 0.839            & 9.5         & 97.1       \\ \cline{2-6} 
+			& Binary Encoded                                             & 84.5             & 0.922            & 81.0        & 87.7       \\ \cline{2-6} 
+			& Probability Encoded                                        & 80.5             & 0.880            & 75.9        & 84.5       \\ \hline
+			\multirow{3}{*}{Cubic SVM}                                       & Categorical Data                                           & 55.9             & 0.806            & 9.1         & 97.1       \\ \cline{2-6} 
+			& Binary Encoded                                             & 84.6             & 0.925            & 80.9        & 87.7       \\ \cline{2-6} 
+			& Probability Encoded                                        & 80.8             & 0.875            & 77.0        & 84.2       \\ \hline
+			\multirow{3}{*}{Neural Network}                                  & Categorical Data                                           & 80.3             & 0.886            & 78.0        & 81.3       \\ \cline{2-6} 
+			& Binary Encoded                                             & 85.1             & 0.915            & 82.5        & 87.5       \\ \cline{2-6} 
+			& Probability Encoded                                        & 87.1             & 0.928            & 85.1        & 88.8       \\ \hline
+		\end{tabular}
+	}
+	\caption{Evaluation Parameters for all the implemented Classification Models.}
+	\label{table:Table1}
+\end{table}
 	
 	The evaluation parameters for all the classification models that have been implemented are listed at Table. \ref{table:Table1}. We can also visually compare the effectiveness of the models based on the plots of accuracy and area under curve for each of the models in  Fig. \ref{fig:Plot1} and \ref{fig:Plot2}. The area under the curve in these cases mostly correlates with the accuracy. We can see that accuracies for SVMs are low when there is no encoding as all the data objects are classified as a single output (In this case 0). This is the reason TNR here is high while TPR is too low. 	
 	
@@ -274,14 +275,14 @@
 	
 	\begin{itemize}
 		\item Tree based classification methods work better with categorical data, while bagging and boosting of the trees gives us a more efficient model.
-		\item SVMs fare poorly when they are trained with categorical data without any encodings. We saw improvements in the models with accuracy, but they couldn't match the effectiveness of the tree-based classifiers.
+		\item SVMs fare poorly when they are trained with categorical data without any encodings. We saw improvements in the models with encoding, but they couldn't match the effectiveness of the tree-based classifiers for this problem.
 		\item Neural network provides us a fairly good results without any encodings. But it provides a significant rise in the effectiveness when encodings were introduced.
 		\item TPR/TNR determine the effectiveness of a model when there is a huge imbalance in the outputs of the classifier. In cases of SVMs when the classifier predicted all values as 0, we got a very high TNR value while TPR was low, signifying a poor model
-		\item Based on our analysis, for this particular problem, AdaBoost along with probabilistic encoding gave use the model with the highest effectiveness which has an accuracy of 87.3\% compared the baseline of 72.1\%.
+		\item Based on our analysis, for this particular problem, AdaBoost along with probabilistic encoding gave use the model with the highest effectiveness which has an accuracy of 87.3\% compared to the baseline of 72.1\%.
 	\end{itemize}
 	
 	\section{Future Work}
-	The dataset contains de-identified person data of the investigators in each of the applications. In case of grant applications, there might be individuals or combination of individuals who can be more likely to receive a grant. Thus,  we can create a Bayes Network based probabilistic classification model which can leverage the individuals' attributes to create a more effective model.  
+	The dataset contains de-identified person data of the investigators in each of the applications. In case of grant applications, there might be individuals or combination of individuals who are more likely to receive a grant. Thus,  we can create a Bayes Network based probabilistic classification model which can leverage the individuals' attributes to create a more effective model.  
 	
 	\begin{thebibliography}{10} % 100 is a random guess of the total number of
 		%references
