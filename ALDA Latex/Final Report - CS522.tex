@@ -41,6 +41,10 @@
 	
 	\maketitle
 	
+	\begin{abstract}
+		This project focuses on finding an accurate method to predict the fate of a university grant applications. The problem was hosted as a Kaggle competition by University of Melbourne to improve their efficiency on grant applications. The dataset contains a mixture of continuous and categorical data and thus, to handle the categorical data attributes we employed methodologies like binary and probabilistic encoding.  We created models based on classifiers such as  Decision Trees, Random Forest, AdaBoost Trees, SVMs and Neural Networks and compared their effectiveness.We used several evaluation parameters like accuracy, area under the curve in ROC plots, TPR and TNR to compare the models and find the most effective model. Furthermore, we also worked on finding the most deterministic attributes in a grant application.
+	\end{abstract}
+	
 	\section{Background}
 	
 	Around the world, the pool of funds available for research grants is steadily shrinking (in a relative sense). In Australia, success rates have fallen to 20-25 per cent, meaning that most academics are spending valuable time making applications that end up being rejected. This problem was hosted as a competition by University of Melbourne to address their inefficiencies with the grant applications. There is also a hope of discovering the most important criteria that are required to succeed in a grant application. 
@@ -153,7 +157,7 @@
 	We implemented a simple one node decision tree to obtain one of the attributes, the mean of number of unsuccessful grants, at the root node. Thus, the classification done with the help of a decision stub with this variable will act as baseline for this problem. Based on the tree obtained, any data object with the variable value greater than 0.813333 was classified as 0 and others as 1. We obtained an accuracy of 72.1\% from this and we aimed to design models with greater accuracy.
 	
 	\subsection{Comparison of Classification Methologies}
-		Since our data did not have too many attributes, dimensionality reduction was not required. For the decision tree and SVM classifiers we opted for a 5-fold cross validation.
+	Since our data did not have too many attributes, dimensionality reduction was not required. For the decision tree and SVM classifiers we opted for a 5-fold cross validation.
 	After the classification models were implemented, we analyzed the confusion matrix to deduce the evaluation parameters and compare the models. One of the confusion matrices along with TPR/FNR rate which was obtained from the random forest model for categorical data is listed at Fig.\ref{fig:RFCM}. 
 	
 	\begin{figure}[h]
@@ -165,7 +169,7 @@
 		\label{fig:RFCM}
 	\end{figure}
 	
-
+	
 	We also compared the models according to the area under the curve of the ROC curve. This will help us to determine the effectiveness of the model in spite of any imbalance in the number of data objects with a specific output
 	By comparing the models which used decision tree and random forest for categorical data based on the ROC curve(Fig.\ref{fig:ROCCat}), we find that the area under the curve for random forest is a higher and thus, random forest is a better model in this scenario where we take the data without any encoding.
 	
@@ -184,7 +188,7 @@
 	
 	Similarly, we compared the encoding methodologies by using the same classification methodology for each of the encodings and evaluate the parameters. Fig. \ref{fig:ROCProbBin} provides the comparison between the encodings where we have taken quadratic SVM as the classifier. We see that binary encoding works a little better in this scenario.
 	
-	\begin{figure}[H]
+	\begin{figure}[h]
 		\begin{center}
 			%\framebox[4.0in]{$\;$}
 			\fbox{\includegraphics[scale=0.4]{ROC-QuadSVM-Bin.png}}
@@ -198,7 +202,7 @@
 	\subsection{Feature Importance Analysis}
 	In addition, we found the important features which determine the outcome of the application. The feature importance is calculated by comparing the error obtained when a single attribute is changed by a specific value in the data object. The data obtained from this dataset is plotted in Fig.\ref{fig:FIM}. From the plot we can see that features Contract Value, Sponsor Code, Application Month, Application Year, Grant Category are the most important factors.
 	
-	\begin{figure}[H]
+	\begin{figure}[h]
 		\begin{center}
 			%\framebox[4.0in]{$\;$}
 			\fbox{\includegraphics[scale=0.5]{FIM.png}}
@@ -209,59 +213,59 @@
 	
 	\subsection{Experiment Results}
 	
-			\begin{figure}[h]
-				\begin{center}
-					%\framebox[4.0in]{$\;$}
-					\fbox{\includegraphics[scale=0.45]{Accuracy.png}}
-				\end{center}
-				\caption{Accuracy of the classification models implemented.}
-				\label{fig:Plot1}
-			\end{figure}
-			
-			\begin{figure}[h]
-				\begin{center}
-					%\framebox[4.0in]{$\;$}
-					\fbox{\includegraphics[scale=0.45]{AreaUnderCurve.png}}
-				\end{center}
-				\caption{Area Under Curve of the ROC curves for all the implemented classification models.}
-				\label{fig:Plot2}
-			\end{figure} 
+	\begin{figure}[h]
+		\begin{center}
+			%\framebox[4.0in]{$\;$}
+			\fbox{\includegraphics[scale=0.45]{Accuracy.png}}
+		\end{center}
+		\caption{Accuracy of the classification models implemented.}
+		\label{fig:Plot1}
+	\end{figure}
 	
-		\renewcommand{\arraystretch}{1.5}
-		\begin{table}[H]
-			\centering
-			\resizebox{\textwidth}{!}{%
-				\begin{tabular}{|l|l|l|l|l|l|}
-					\hline
-					\begin{tabular}[c]{@{}l@{}}Classification \\ Method\end{tabular} & \begin{tabular}[c]{@{}l@{}}Encoding \\ Method\end{tabular} & Accuracy (In \%) & Area Under Curve & TPR (In \%) & TNR(In \%) \\ \hline
-					\multirow{3}{*}{Decision Tree}                                   & Categorical Data                                           & 82.8             & 0.895            & 86.26       & 79.68      \\ \cline{2-6} 
-					& Binary Encoded                                             & 82.3             & 0.893            & 84.63       & 80.14      \\ \cline{2-6} 
-					& Probability Encoded                                        & 84.0             & 0.897            & 82.54       & 85.29      \\ \hline
-					\multirow{3}{*}{Random Forest}                                   & Categorical Data                                           & 85.8             & 0.938            & 86.05       & 85.58      \\ \cline{2-6} 
-					& Binary Encoded                                             & 85.9             & 0.937            & 85.08       & 86.54      \\ \cline{2-6} 
-					& Probability Encoded                                        & 85.4             & 0,930            & 82.6        & 87.9       \\ \hline
-					\multirow{3}{*}{AdaBoost Tree}                                   & Categorical Data                                           & 87.1             & 0.947            & 87.35       & 86.82      \\ \cline{2-6} 
-					& Binary Encoded                                             & 86.6             & 0.943            & 85.16       & 87.83      \\ \cline{2-6} 
-					& Probability Encoded                                        & 87.3             & 0.947            & 86.52       & 87.85      \\ \hline
-					\multirow{3}{*}{Linear SVM}                                      & Categorical Data                                           & 56.0             & 0.819            & 9.6         & 96.7       \\ \cline{2-6} 
-					& Binary Encoded                                             & 78.4             & 0.867            & 73.67       & 82.62      \\ \cline{2-6} 
-					& Probability Encoded                                        & 75.9             & 0.821            & 71.45       & 79.89      \\ \hline
-					\multirow{3}{*}{Quadratic SVM}                                   & Categorical Data                                           & 56.1             & 0.839            & 9.5         & 97.1       \\ \cline{2-6} 
-					& Binary Encoded                                             & 84.5             & 0.922            & 80.97       & 87.67      \\ \cline{2-6} 
-					& Probability Encoded                                        & 80.5             & 0.880            & 75.94       & 84.52      \\ \hline
-					\multirow{3}{*}{Cubic SVM}                                       & Categorical Data                                           & 55.9             & 0.806            & 9.1         & 97.1       \\ \cline{2-6} 
-					& Binary Encoded                                             & 84.6             & 0.925            & 80.9        & 87.7       \\ \cline{2-6} 
-					& Probability Encoded                                        & 80.8             & 0.875            & 77          & 84.2       \\ \hline
-					\multirow{3}{*}{Neural Network}                                  & Categorical Data                                           & 80.3             & 0.886            & 78.0        & 81.3       \\ \cline{2-6} 
-					& Binary Encoded                                             & 85.1             & 0.915            & 82.5        & 87.5       \\ \cline{2-6} 
-					& Probability Encoded                                        & 87.1             & 0.928            & 85.14       & 88.84      \\ \hline
-				\end{tabular}
-			}
-			\caption{Evaluation parameters obtained for all the tested classification models}
-			\label{table:Table1}
-		\end{table}
-		
-			The evaluation parameters for all the classification models that have been implemented are listed at Table. \ref{table:Table1}. We can also visually compare the effectiveness of the models based on the plots of accuracy and area under curve for each of the models in  Fig. \ref{fig:Plot1} and \ref{fig:Plot2}. The area under the curve in these cases mostly correlates with the accuracy. We can see that accuracies for SVMs are low when there is no encoding as all the data objects are classified as a single output (In this case 0). This is the reason TNR here is high while TPR is too low. 	
+	\begin{figure}[H]
+		\begin{center}
+			%\framebox[4.0in]{$\;$}
+			\fbox{\includegraphics[scale=0.45]{AreaUnderCurve.png}}
+		\end{center}
+		\caption{Area Under Curve of the ROC curves for all the implemented classification models.}
+		\label{fig:Plot2}
+	\end{figure} 
+	
+	\renewcommand{\arraystretch}{1.5}
+	\begin{table}[H]
+		\centering
+		\resizebox{\textwidth}{!}{%
+			\begin{tabular}{|l|l|l|l|l|l|}
+				\hline
+				\begin{tabular}[c]{@{}l@{}}Classification \\ Method\end{tabular} & \begin{tabular}[c]{@{}l@{}}Encoding \\ Method\end{tabular} & Accuracy (In \%) & Area Under Curve & TPR (In \%) & TNR(In \%) \\ \hline
+				\multirow{3}{*}{Decision Tree}                                   & Categorical Data                                           & 82.8             & 0.895            & 86.26       & 79.68      \\ \cline{2-6} 
+				& Binary Encoded                                             & 82.3             & 0.893            & 84.63       & 80.14      \\ \cline{2-6} 
+				& Probability Encoded                                        & 84.0             & 0.897            & 82.54       & 85.29      \\ \hline
+				\multirow{3}{*}{Random Forest}                                   & Categorical Data                                           & 85.8             & 0.938            & 86.05       & 85.58      \\ \cline{2-6} 
+				& Binary Encoded                                             & 85.9             & 0.937            & 85.08       & 86.54      \\ \cline{2-6} 
+				& Probability Encoded                                        & 85.4             & 0,930            & 82.6        & 87.9       \\ \hline
+				\multirow{3}{*}{AdaBoost Tree}                                   & Categorical Data                                           & 87.1             & 0.947            & 87.35       & 86.82      \\ \cline{2-6} 
+				& Binary Encoded                                             & 86.6             & 0.943            & 85.16       & 87.83      \\ \cline{2-6} 
+				& Probability Encoded                                        & 87.3             & 0.947            & 86.52       & 87.85      \\ \hline
+				\multirow{3}{*}{Linear SVM}                                      & Categorical Data                                           & 56.0             & 0.819            & 9.6         & 96.7       \\ \cline{2-6} 
+				& Binary Encoded                                             & 78.4             & 0.867            & 73.67       & 82.62      \\ \cline{2-6} 
+				& Probability Encoded                                        & 75.9             & 0.821            & 71.45       & 79.89      \\ \hline
+				\multirow{3}{*}{Quadratic SVM}                                   & Categorical Data                                           & 56.1             & 0.839            & 9.5         & 97.1       \\ \cline{2-6} 
+				& Binary Encoded                                             & 84.5             & 0.922            & 80.97       & 87.67      \\ \cline{2-6} 
+				& Probability Encoded                                        & 80.5             & 0.880            & 75.94       & 84.52      \\ \hline
+				\multirow{3}{*}{Cubic SVM}                                       & Categorical Data                                           & 55.9             & 0.806            & 9.1         & 97.1       \\ \cline{2-6} 
+				& Binary Encoded                                             & 84.6             & 0.925            & 80.9        & 87.7       \\ \cline{2-6} 
+				& Probability Encoded                                        & 80.8             & 0.875            & 77          & 84.2       \\ \hline
+				\multirow{3}{*}{Neural Network}                                  & Categorical Data                                           & 80.3             & 0.886            & 78.0        & 81.3       \\ \cline{2-6} 
+				& Binary Encoded                                             & 85.1             & 0.915            & 82.5        & 87.5       \\ \cline{2-6} 
+				& Probability Encoded                                        & 87.1             & 0.928            & 85.14       & 88.84      \\ \hline
+			\end{tabular}
+		}
+		\caption{Evaluation parameters obtained for all the tested classification models}
+		\label{table:Table1}
+	\end{table}
+	
+	The evaluation parameters for all the classification models that have been implemented are listed at Table. \ref{table:Table1}. We can also visually compare the effectiveness of the models based on the plots of accuracy and area under curve for each of the models in  Fig. \ref{fig:Plot1} and \ref{fig:Plot2}. The area under the curve in these cases mostly correlates with the accuracy. We can see that accuracies for SVMs are low when there is no encoding as all the data objects are classified as a single output (In this case 0). This is the reason TNR here is high while TPR is too low. 	
 	
 	\section{Conclusion}
 	The experiments were done using a few of the classification techniques that were covered in the CSC522 courses. We trained the models using binary and probabilistic encodings of the categorical data as well as without using any encoding. Evaluation parameters like accuracy, area under of curve in ROC plot, TPR, TNR were used to compare the models.
@@ -289,5 +293,12 @@
 		\bibitem{Matlab} Predict Grant Applications - Kaggle Competition, https://www.kaggle.com/c/unimelb 
 	\end{thebibliography}
 	
+	Dataset:
+	
+	\url{https://drive.google.com/a/ncsu.edu/file/d/0B5j0qZXYCftuSVRJRWNmd2FLR0k/view?usp=sharing}
+	
+	Git Repository:
+	
+	\url{https://github.ncsu.edu/pbehera/CSC522_PredictGrantApplications.git}
 	
 \end{document}
